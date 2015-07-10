@@ -1,5 +1,5 @@
 FROM phusion/baseimage:0.9.16
-MAINTAINER epflstiit <epflstiit@groupes.epfl.ch>
+MAINTAINER epflsti <stiitdev@groupes.epfl.ch>
 
 # Set correct environment variables
 ENV HOME /root
@@ -15,29 +15,24 @@ RUN \
  usermod -d /config nobody && \
  chown -R nobody:users /home
 
-RUN apt-get update &&  apt-get -y install xvfb x11vnc xdotool wget supervisor 
-RUN apt-get -y install octave
-RUN apt-get -y install firefox
-RUN apt-get -y install fluxbox
-RUN apt-get -y install git-core git
+# Installing apps (Note: git is here juste in case noVNC needs it in launch.sh
+RUN apt-get update &&  apt-get -y install xvfb x11vnc xdotool wget supervisor octave fluxbox git-core git
 
-#ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-#ENV WINEPREFIX /root/prefix32
-#ENV WINEARCH win32
 ENV DISPLAY :0
 
 WORKDIR /root/
 ADD novnc /root/novnc/
 
+# A few examples for the demo
 WORKDIR /scripts
 ADD ./octave_scr /scripts
 
-#ADD qt-settings /root/.config/octave/qt-settings
-COPY qt-settings /root/.config/octave/qt-settings
+# Can be confiugured to set octave settings
+#COPY qt-settings /root/.config/octave/qt-settings
 
-# Expose Port
+# Expose Port (Note: if you change it do it as well in surpervisord.conf)
 EXPOSE 8083
 
 CMD ["/usr/bin/supervisord"]
