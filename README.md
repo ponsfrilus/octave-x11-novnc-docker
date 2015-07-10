@@ -29,7 +29,7 @@ This container runs:
 * octave is launched, just launch some script e.g. my_sombrero.m
 
 ## On DockerHub
-[https://registry.hub.docker.com/u/epflsti/octave-x11-novnc-docker/](epflsti/octave-x11-novnc-docker)
+[epflsti/octave-x11-novnc-docker/](https://registry.hub.docker.com/u/epflsti/octave-x11-novnc-docker/)
 
 ## Thanks
 Based on  [wine-x11-novnc-docker](https://github.com/solarkennedy/wine-x11-novnc-docker), thanks @solarkennedy !
