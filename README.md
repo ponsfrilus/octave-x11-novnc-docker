@@ -17,10 +17,19 @@ This container runs:
 
 ## How To
 
+### With Docker 
+* docker pull epflsti/octave-x11-novnc-docker
+* docker run -p 8083:8083 -ti  epflsti/octave-x11-novnc-docker:latest
+* firefox http://localhost:8083
+
+### Manual Build
 * docker build -t epflsti/wine-x11-novnc-docker:latest .
 * docker run -p 8083:8083 -ti  epflsti/wine-x11-novnc-docker:latest
 * firefox http://localhost:8083
-* octave is launched, just launch some script e.g. sombrero.m
+* octave is launched, just launch some script e.g. my_sombrero.m
+
+## On DockerHub
+[https://registry.hub.docker.com/u/epflsti/octave-x11-novnc-docker/](epflsti/octave-x11-novnc-docker)
 
 ## Thanks
 Based on  [wine-x11-novnc-docker](https://github.com/solarkennedy/wine-x11-novnc-docker), thanks @solarkennedy !
