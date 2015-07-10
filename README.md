@@ -3,7 +3,7 @@
 This docker runs GNU Octave - an open source Matlab - which provides capabilities for the numerical solution of linear and nonlinear problems, and for performing other numerical experiments.
 The Octave GUI have to be accessed through a browser in a noVNC windows.
 
-![Demo Screenshot](https://raw.github.com/epflsti/octave-x11-novnc-docker/master/screenshot.png)
+![Demo Screenshot](https://github.com/epfl-sti/octave-x11-novnc-docker/blob/master/screenshot.png)
 
 
 ## About
