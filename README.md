@@ -16,7 +16,7 @@ The Octave GUI have to be accessed through a browser in a noVNC windows.
 
 ## How To
 
-### With Docker 
+### With Docker Hub
 
 * docker pull epflsti/octave-x11-novnc-docker
 * docker run -p 8083:8083 -ti  epflsti/octave-x11-novnc-docker:latest
@@ -29,11 +29,13 @@ The Octave GUI have to be accessed through a browser in a noVNC windows.
 * firefox http://localhost:8083
 * octave is launched, just launch some script e.g. my_sombrero.m
 
-## gh-pages
+## Gh-pages
 Please visit the project's website on [http://epfl-sti.github.io/octave-x11-novnc-docker/](http://epfl-sti.github.io/octave-x11-novnc-docker/)
 
-## On DockerHub
-[epflsti/octave-x11-novnc-docker](https://registry.hub.docker.com/u/epflsti/octave-x11-novnc-docker/)
+## On DockerHub / GitHub
+
+* [epflsti/octave-x11-novnc-docker on DockerHub](https://registry.hub.docker.com/u/epflsti/octave-x11-novnc-docker/)
+* [epfl-sti/octave-x11-novnc-docker on GitHub](https://github.com/epfl-sti/octave-x11-novnc-docker)
 
 ## Thanks
-Based on  [wine-x11-novnc-docker](https://github.com/solarkennedy/wine-x11-novnc-docker), thanks @solarkennedy !
+Based on [wine-x11-novnc-docker](https://github.com/solarkennedy/wine-x11-novnc-docker), thanks @solarkennedy !
