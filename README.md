@@ -5,6 +5,7 @@ The Octave GUI have to be accessed through a browser in a noVNC windows.
 
 ![Demo Screenshot](http://epfl-sti.github.io/octave-x11-novnc-docker/images/lorenz.png)
 
+[... more screenshots](http://epfl-sti.github.io/octave-x11-novnc-docker/#screenshots)
 
 ## This container runs
 
@@ -18,15 +19,16 @@ The Octave GUI have to be accessed through a browser in a noVNC windows.
 
 ### With Docker Hub
 
-* docker pull epflsti/octave-x11-novnc-docker
-* docker run -p 8083:8083 -ti  epflsti/octave-x11-novnc-docker:latest
-* firefox http://localhost:8083
+* `docker pull epflsti/octave-x11-novnc-docker`
+* `docker run -p 8083:8083 -ti  epflsti/octave-x11-novnc-docker:latest`
+* `firefox http://localhost:8083`
+* octave is launched, just launch some script e.g. my_sombrero.m
 
 ### Manual Build
 
-* docker build -t epflsti/octave-x11-novnc-docker:latest .
-* docker run -p 8083:8083 -ti  epflsti/octave-x11-novnc-docker:latest
-* firefox http://localhost:8083
+* `docker build -t epflsti/octave-x11-novnc-docker:latest .`
+* `docker run -p 8083:8083 -ti  epflsti/octave-x11-novnc-docker:latest`
+* `firefox http://localhost:8083`
 * octave is launched, just launch some script e.g. my_sombrero.m
 
 ## Gh-pages
