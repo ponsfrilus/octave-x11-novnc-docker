@@ -1,3 +1,6 @@
+# docker build -t epflsti/octave-x11-novnc-docker .
+# docker run -it -p 8083:8083 epflsti/octave-x11-novnc-docker
+
 FROM phusion/baseimage:0.9.16
 MAINTAINER epflsti <stiitdev@groupes.epfl.ch>
 
@@ -5,23 +8,31 @@ MAINTAINER epflsti <stiitdev@groupes.epfl.ch>
 ENV HOME /root
 ENV DEBIAN_FRONTEND noninteractive
 ENV LC_ALL C.UTF-8
-ENV LANG fr_CH.UTF-8
-ENV LANGUAGE fr_CH.UTF-8
-
-# Configure user nobody to match unRAID's settings
-RUN \
- usermod -u 99 nobody && \
- usermod -g 100 nobody && \
- usermod -d /config nobody && \
- chown -R nobody:users /home
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
+ENV TZ=Europe/Zurich
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Installing apps (Note: git is here juste in case noVNC needs it in launch.sh
-RUN apt-get update &&  apt-get -y install xvfb x11vnc xdotool wget supervisor octave fluxbox git-core git
+RUN apt-get update && apt-get -y install \
+	xvfb \
+	x11vnc \
+	supervisor \
+	octave \
+	fluxbox \
+	git-core \
+	git
 
+# House cleaning
+RUN apt-get autoclean
+
+# Docker's supervisor
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+# Set display
 ENV DISPLAY :0
 
+# Change work directory to add novnc files
 WORKDIR /root/
 ADD novnc /root/novnc/
 
