@@ -24,6 +24,8 @@ The Octave GUI have to be accessed through a browser in a noVNC windows.
 * `firefox http://localhost:8083`
 * octave is launched, just run some script e.g. my_sombrero.m
 
+Adding the parameter `-e SCREEN_RESOLUTION=<width>x<height>` the screen size displayed is adjusted to the one in the environment variable. By default it is 1024x768.
+
 ### Manual Build
 
 * `docker build -t epflsti/octave-x11-novnc-docker:latest .`
