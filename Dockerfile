@@ -5,7 +5,7 @@
 # RUN DOCKER:		docker run -it -p 8083:8083 epflsti/octave-x11-novnc-docker
 # TEST DOCKER:	docker exec -it epflsti/octave-x11-novnc-docker /bin/bash
 
-FROM phusion/baseimage:0.9.18
+FROM phusion/baseimage:0.9.22
 MAINTAINER epflsti <stiitdev@groupes.epfl.ch>
 
 # Set correct environment variables
@@ -27,6 +27,7 @@ RUN apt-get update && apt-get -y install \
 	supervisor \
 	fluxbox \
 	octave \
+	net-tools \
 	git-core \
 	git
 
@@ -41,7 +42,8 @@ ENV DISPLAY :0
 
 # Change work directory to add novnc files
 WORKDIR /root/
-ADD novnc /root/novnc/
+ADD noVNC-0.6.2 /root/novnc/
+RUN ln -s /root/novnc/vnc_auto.html /root/novnc/index.html 
 
 # A few examples for the demo
 WORKDIR /scripts
