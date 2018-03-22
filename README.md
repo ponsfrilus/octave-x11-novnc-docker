@@ -26,6 +26,9 @@ The Octave GUI have to be accessed through a browser in a noVNC windows.
 
 Adding the parameter `-e SCREEN_RESOLUTION=<width>x<height>` the screen size displayed is adjusted to the one in the environment variable. By default it is 1024x768.
 
+If your source files are in your host then just add the -v parameter for example
+* `docker run -p 8083:8083 -ti -v $(pwd):/source epflsti/octave-x11-novnc-docker:latest`
+
 ### Manual Build
 
 * `docker build -t epflsti/octave-x11-novnc-docker:latest .`
